@@ -1,0 +1,53 @@
+---
+layout: home
+title: Team Open
+source: teamopen
+published: true
+permalink: /all/
+---
+	{% assign numberofprofiles = 12 %}
+
+<div class="othercontent">
+<p>Creative Commons is a nonprofit organization that enables the sharing and use of creativity and knowledge through free legal tools.</p>
+<p>Team Open is a project to collect and share stories of the power of Creative Commons licenses.</p>
+
+<a name="toc"><p style="text-align: center; font-size: large; ">
+{% for category in site.data.tocategories %}<a href="#{{ category.anchor }}">{{ category.category }}</a><br />{% endfor %}
+</p></a>
+</div>
+
+{% for category in site.data.tocategories %}
+	<a name="{{ category.anchor }}"><div style="height: 30px; "></div>
+	<div class="othercontent">
+	<h2>{{ category.category }}</h3></a>
+	</div>
+	{% for page in site.pages %}
+		{% if page.layout == 'profiles' and page.category == category.anchor %}
+			<a href="{{ page.permalink }}" style="text-decoration: none; ">
+			<div class="selector" style="background-color: {{page:bgcolorb}}; ">
+			<div class="bannerleft" style="background: url({{page.headshoturl}}) no-repeat 0 0; " /></div>
+			<div class="bannerleft" style="background: {{page:bgcolorb}}; ">
+			<div class="bannerrightcontent">
+			<h2>{{ page.title }}</h2>
+			<h3>{{ page.blurb }}</h3> 
+			</div>
+			</div>
+			</div>
+			</a>
+			<div style="clear: both; "></div>
+		{% endif %}
+	{% endfor %}
+	<div class="othercontent"><p><a href="#toc">back to top</a></p></div>
+{% endfor %}
+
+<div style="height: 50px; clear: both; "></div>
+
+<div class="licensebox">
+<p>The Team Open website, interviews, and trading cards are licensed under <a href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International</a>.</p>
+<p>The Team Open caricatures were created by <a href="http://www.lukesurl.com/">Luke Surl</a>. To the extent possible under the law, Luke has waived all copyright and related or neighboring rights under the <a href="http://creativecommons.org/publicdomain/zero/1.0/">CC0 Public Domain Declaration</a>.</p>
+<p>The Team Open logo is set in <a href="http://www.dafont.com/mexcellent.font">Mexcellent</a>. This website and the Team Open trading cards are set in <a href="http://www.google.com/fonts/specimen/Roboto+Slab">Roboto Slab</a>.</p>
+<p><a href="https://github.com/creativecommons/team-open/">GitHub repository</a></p>
+<p>LayerVault projects:</p>
+<ul><li><a href="https://layervault.com/creative-commons/team%20open">Website and trading card design</a></li>
+<li><a href="https://layervault.com/creative-commons/Team%20Open%20portraits">Caricatures</a></li></ul>
+</div>

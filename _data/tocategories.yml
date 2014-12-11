@@ -1,0 +1,23 @@
+- category: Art
+  anchor: art
+  
+- category: Business
+  anchor: business
+
+- category: Education
+  anchor: education
+
+- category: Government and policy
+  anchor: government
+
+- category: Music and film
+  anchor: music
+
+- category: Nonprofit and advocacy
+  anchor: nonprofit
+
+- category: Science and data
+  anchor: science
+
+- category: Writing
+  anchor: writing

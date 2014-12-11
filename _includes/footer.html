@@ -1,0 +1,22 @@
+	{% if include.position == "fixed" %}
+		<div class="spacer"></div>
+	{% endif %}
+
+		<div id="circles" style="background-color: {{ include:bgcolora }}; position: {{ include.position }}; ">
+
+<a href="{{ include.tweet }}" target="_blank" style="text-decoration: none; "><div class="circle" style="background-image: url(/images/twitter.png);"><div class="circletext">share on twitter</div></div></a>
+
+<a href="{{ include.facebook }}" target="_blank" style="text-decoration: none; "><div class="circle" style="background-image: url(/images/facebook.png); "><div class="circletext">share on facebook</div></div></a>
+
+<a href="{{ include.donate }}" target="_blank" style="text-decoration:none; "><div class="heart"><div class="hearttext">donate</div></div></a>
+
+               <form style="text-align: center; margin: 0; margin-top: -1em; padding: 0; padding-left: 400px; " action="https://donate.creativecommons.org/civicrm/profile/create?gid=29&amp;reset=1" method="post" name="Edit">
+               <p><label for="email-Primary">Get Creative Commons
+               updates</label></p><p><small><input id="email-Primary"
+               class="form-control input-lg" maxlength="64"
+               name="email-Primary" size="30"
+               placeholder="mattl@example.com" >   <input class="btn btn-success" id="_qf_Edit_next" accesskey="S" name="_qf_Edit_next" type="submit" value="Subscribe"><input name="postURL" type="hidden" value="https://creativecommons.org/thank-you"><input name="cancelURL" type="hidden" value="https://creativecommons.org/newsletter"><input name="group[121]" type="hidden" value="1"><input name="_qf_default" type="hidden" value="Edit:cancel"></small></p>
+               <p>
+                 <a href="{{ include.donate }}" target="_blank">Donate to Creative Commons</a></p>
+               </form>
+		</div>

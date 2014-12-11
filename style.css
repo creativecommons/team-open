@@ -1,0 +1,393 @@
+body {
+	background-color: white;
+	font-family: 'Roboto Slab', serif; 
+	color: #FEFCFF;
+	}
+
+blockquote {
+	border: 2px solid white;
+	border-radius: 10px;
+	padding: 5px;
+	}
+
+h1 {
+	text-indent: -9999px;
+	background: url(/images/teamopen_logo.png) no-repeat 0 0;
+	width: 500px;
+	height: 82px;
+	margin-left: 50px;
+	float: left;
+/*	margin-right: auto; */
+	}
+
+#seriesbox-holder {
+	position: relative;
+	left: 90px;
+	}
+
+.seriesbox {
+	float: left;
+	background-color: {{page:bgcolorb}};
+	padding: 5px;
+	margin-top: 18px;
+	margin-right: 10px;
+	border: 2px solid white;
+	border-radius: 5px;
+	}
+
+h1.annualreport {
+	text-indent: -9999px;
+	background: url(/images/ar-title.png) no-repeat 0 0;
+	width: 750px;
+	height: 114px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 0px;
+	}
+
+body a {
+	color: #FEFCFF;
+	}
+
+#middle {
+	width: 900px;
+	margin-left: auto;
+	margin-right: auto;
+	}
+
+#navbar {
+	width: 900px;
+	margin-left: auto;
+	margin-right: auto;
+	}
+
+#topspace {
+	height: 2px;
+	}
+
+#bannnerstrip {
+	height: 400px;
+	width: 100%;
+	}
+
+#shortprofile {
+	padding-left: 50px;
+	padding-right: 50px;
+	padding-top: 25px;
+	padding-bottom: 25px;
+	margin-top: 25px;
+	border-top: 2px solid white;
+	border-bottom: 2px solid white;
+	font-size: large;
+	text-align: justify;
+	}
+
+#profile {
+	padding-top: 25px;
+	padding-left: 50px;
+	padding-bottom: 10px;
+	padding-right: 200px;
+	line-height: 150%;
+	}
+
+#circles {
+	bottom: 0px;
+	width: 850px;
+	height: 120px;
+	padding-top: 15px;
+	padding-left: 50px;
+	border-top: 2px solid white;
+	}
+
+.navface {
+	width: 75px;
+	height: 75px;
+	background-color: inherit;
+	float: left;
+	text-indent: -9999px;
+	}
+
+.navface:hover {
+	background-position: -75px 0px;
+	}
+
+.bannerleft, .bannerright {
+	width: 400px;
+	height: 400px;
+	float: left;
+}	
+
+.arbanner {
+	width: 900px;
+	height: 400px;
+	float: left;
+	position: relative;
+	border-bottom: 10px solid white;
+	}
+
+.arbanner h2 {
+	margin-top: 300px;
+	color: white;
+	padding-right: 50px;
+	text-align: right;
+	font-size: 200%;
+	background-color: rgba(0, 0, 0, 0.75);
+	}
+
+.feature {
+	width: 250px;
+	padding: 10px;
+	margin: 10px;
+	border: 1px solid white;
+	border-radius: 20px;
+	margin-bottom: 25px;
+	float: left;
+	} 
+
+.feature-photo {
+	margin-left: auto;
+	margin-right: auto;
+	width: 200px;
+	height: 100px;
+	}	
+
+.feature-photo:hover {
+    background-position: -200px 0px;
+	}
+
+.feature-credit {
+	margin-left: auto;
+	margin-right: auto;
+	width: 200px;
+	margin-top: 5px;
+	}
+
+.feature-credit a {
+	text-decoration: none;
+	}
+
+.feature-badge {
+	width: 25px;
+	height: 25px;
+	margin-right: 1px;
+	vertical-align: middle;
+	}
+
+.armenu {
+	width: 250px;
+	height: 295px;
+	margin: 10px;
+	border: 8px solid white;
+	float: left;
+	position: relative;
+	}
+
+.armenu a {
+	text-decoration: none;
+	}
+
+.armenu-textbox {
+	height: 100px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 10px;
+	}
+
+.armenu-text {
+	width: 200px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	margin-top: 0px;
+	font-size: 90%;
+	line-height: 110%;
+	}
+
+.armenu-social {
+	position: absolute;
+	bottom: -15px;
+	left: 100px;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	}
+	
+.armenu-photo {
+	margin-left: auto;
+	margin-right: auto;
+	width: 250px;
+	height: 150px;
+	}	
+
+.armenu-photo:hover {
+    background-position: -250px 0px;
+	}
+
+.armenu-sharebox {
+	width: 245px;
+	height: 25px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 5px;
+	}
+
+#ar-textblock {
+	width: 350px;
+	padding-top: 25px;
+	margin-left: 50px;
+	padding-bottom: 10px;
+	margin-right: 50px;
+	line-height: 150%;
+	float: left;
+	background-color: inherit;
+	}
+
+.arfeatures {
+	margin-left: auto;
+	margin-right: auto;
+	width: 860px;
+	}
+
+#arsupporter-box {
+	margin-left: auto;
+	margin-right: auto;
+	}
+
+.arsupporter {
+	width: 175px;
+	margin-left: 5px;
+	margin-right: 5px;
+	border: 2px solid white;
+	border-radius: 10px;
+	padding: 5px;
+	float: left;
+	}
+
+.bannerright:hover {
+	background-position: -400px 0px;
+	}
+
+.bannerrightcontent {
+	margin-top: 125px;
+	padding-left: 20px;
+	padding-right: 20px;
+	}
+
+.arrow {
+	width: 50px;
+	height: 400px;
+	float: left;
+	}
+	
+.arrow:hover {
+	background-position: -50px 0px;
+	}
+
+.uparrow {
+	width: 52px;
+	height: 25px;
+	margin-left: auto;
+	margin-right: 200px;
+	background-image: url(/images/uparrow.png);
+	}
+
+.uparrow:hover {
+	background-position: -52px 0px;
+	}
+
+.othercontent {
+	padding-left: 50px;
+	padding-right: 200px;
+	line-height: 150%;
+	}
+
+.circle {
+	float: left;
+	position: relative;
+	text-indent: -9999px;
+	border-radius: 50%;
+	width: 91px;
+	height: 91px;
+	margin-right: 19px;
+	border: 9px solid #FEFCFF;
+	background-repeat: no-repeat;
+	background-position: -5px -5px;
+	text-align: center;
+	}
+
+.circle:hover {
+    background-position: -105px -5px;
+	text-indent: 0px;
+	}
+
+.circletext {
+	font-size: 90%;
+	text-align: center;
+	vertical-align: middle;
+	display: table-cell;
+	height: 91px;
+	}  
+
+.heart {
+	float: left;
+	position: relative;
+	text-indent: -9999px;
+	width: 114px;
+	height: 110px;
+	background-repeat: no-repeat;
+	background-position: 0px 5px;
+	text-align: center;
+	background-image: url(/images/heart.png); 
+	}
+
+.heart:hover {
+    background-position: -114px 5px;
+	text-indent: 0px;
+	}
+
+.hearttext {
+	font-size: 90%;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 91px;
+	}  
+
+.circletext {
+	font-size: 90%;
+	text-align: center;
+	vertical-align: middle;
+	display: table-cell;
+	height: 91px;
+	}  
+
+.licensebox {
+	width: 400px;
+	margin-left: 50px;
+	margin-right: auto;
+	padding-bottom: 50px;
+	font-size: 90%;
+	}	
+
+.ar-licensebox {
+	width: 700px;
+	margin-left: 50px;
+	margin-right: auto;
+	padding-bottom: 50px;
+	font-size: 75%;
+	}	
+
+.spacer {
+	height: 100px;
+	clear: both;
+	}
+	
+.selector {
+	width: 900px;
+	height: 400px;
+	background-image: url(/images/rightarrow-all.png);
+	}
+	
+.selector:hover {
+    background-position: 900px 0px;
+    }
+

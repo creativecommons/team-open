@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>{{ page.title }} | The future is open</title>
+
+<meta charset="utf-8" />
+
+<!-- Facebook open graph metadata -->
+
+<meta property="og:title" content="{{ page.title }}" />
+<meta property="og:url" content="http://teamopen.cc{{ page.permalink }}" />
+<meta property="og:image" content="http://teamopen.cc{{ page.fbog-image }}"/>
+<meta property="og:site_name" content="The future is open" />
+<meta property="og:description" content="{{ page.fbog-blurb }}" />
+
+<!-- Twitter card metadata -->
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@creativecommons">
+<meta name="twitter:title" content="{{ page.title }}">
+<meta name="twitter:description" content="{{ page.tc-blurb }}">
+<meta name="twitter:image:src" content="http://teamopen.cc{{ page.tc-image }}">
+<meta name="twitter:domain" content="teamopen.cc">
+
+
+<link rel="stylesheet" type="text/css" href="/style.css" />
+<link href='http://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet' type='text/css'>
+
+
+	<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-2010376-27', 'teamopen.cc');
+  ga('send', 'pageview');
+
+</script>
+
+<!-- This code is what makes the "next" and "previous" buttons work, as well as the faces in the navbar. When adding new profiles, adjust the page.order variable for all profiles accordingly, and change the numberofprofiles variable below to the total number of profiles. -->
+
+	{% assign currentpage = page.title %}
+	{% assign numberofpages = 10 %}
+
+	{% if page.order %}
+		{% if page.order == {numberofpages} %}
+			{% assign orderplusone = 1 %}
+		{% else %}
+			{% assign orderplusone = page.order|plus:1 %}
+		{% endif %}
+	{% endif %}
+
+	{% if page.order %}
+		{% if page.order == 1 %}
+			{% assign orderminusone = {numberofpages} %}
+		{% else %}
+			{% assign orderminusone = page.order|minus:1 %}
+		{% endif %}
+	{% endif %}
+
+</head>
+<body>
+
+<a href="/thefuture/"><h1 class="annualreport" style="background-color: {{ page.bgcolorb }}; ">The future is open</h1></a>
+
+<div id="navbar" style="width: 750px;">
+	{% for i in (1..numberofpages) %}
+		{% for page in site.pages %}
+			{% if page.layout == 'annualreport' %} 
+				{% if page.order == {{i}} %}
+					{% if page.title == {{currentpage}} %}
+						<div class="navface" style="background-image: url({{page.nav-image}}); background-color: {{ page.bgcolorb }}; background-position: -75px 0px; ">{{ page.title }}</div>
+					{% else %}
+						<a href="{{ page.permalink }}"><div class="navface" style="background-image: url({{page.nav-image}}); background-color: {{ page.bgcolorb }};">{{ page.title }}</div></a>
+					{% endif %}
+				{% endif %}
+			{% endif %}
+		{% endfor %}
+	{% endfor %}
+</div>
+
+
+<div style="clear: both; "></div>
+
+<div style="max-width: 700px; margin-left: auto; margin-right: auto; color: {{ page:bgcolorb }}; ">
+{% include newslettersignup.html %}
+</div>
+
+<div id="middle" style="background-color: {{ page:bgcolora }}; ">
+<div id="topspace"></div>
+
+{% if page.order %}
+
+<div class="arbanner" style="background: url('{{page:ar-banner-bg}}'); ">  
+
+	{% for page in site.pages %}
+    	{% if page.layout == 'annualreport' %}  
+			{% if page.order == {{orderminusone}} %}
+				<a href="{{ page.permalink }}">
+			{% endif %}
+		{% endif %}
+	{% endfor %}
+
+	{% if page.darkarrow == true %}
+	  	<div class="arrow" style="background-image: url('/images/leftarrow-dark.png'); " ></div>
+  	{% else %}
+	  	<div class="arrow" style="background-image: url('/images/leftarrow.png'); " ></div>
+	{% endif %}
+
+</a>
+
+<div style="width: 800px; float:left; ">&#160;</div>
+
+  {% for page in site.pages %}
+    {% if page.layout == 'annualreport' %}  
+    	{% if page.order == {{orderplusone}} %}
+    		<a href="{{ page.permalink }}">
+    	{% endif %}
+    {% endif %}
+  {% endfor %}
+
+	{% if page.darkarrow == true %}
+	  	<div class="arrow" style="background-image: url('/images/rightarrownocc-dark.png'); " ></div>
+  	{% else %}
+	  	<div class="arrow" style="background-image: url('/images/rightarrownocc.png'); " ></div>
+	{% endif %}
+
+</a>
+
+</div>
+
+<br style="clear: both; " />
+		<div id="profile">
+		
+<h2>{{ page.title }}</h2>
+
+{{content}}
+
+</div>
+
+{% else %}
+
+{{content}}
+
+{% endif %}
+
+<div class="arfeatures">
+	{% for feature in site.data.features %}
+		{% if feature.owner == page.order %}
+			<div class="armenu">
+				<div class="armenu-sharebox" style="background-color: {{ page.bgcolorb }}; " align="center">
+					{% if feature.image-license %}
+						<a href="#license">
+						{% if feature.image-license == 'CC0' %}
+							<img src="/images/cc0-25-white.png" />
+						{% else %}
+							{% if feature.image-license contains 'BY' %}
+								<img src="/images/by-25-white.png" />
+							{% endif %}
+							{% if feature.image-license contains 'NC' %}
+								<img src="/images/nc-25-white.png" />
+							{% endif %}						
+							{% if feature.image-license contains 'SA' %}
+								<img src="/images/sa-25-white.png" />
+							{% endif %}						
+							{% if feature.image-license contains 'ND' %}
+								<img src="/images/nd-25-white.png" />
+							{% endif %}
+						{% endif %}	
+					{% endif %}
+				</div>
+				<a href="{{ feature.link }}" target="_blank">
+				<div class="armenu-photo" style="background-image: url({{ feature.image }})"></div>
+				<div class="armenu-textbox" style="background-color: {{ page.bgcolorb }};">
+					<p class="armenu-text">{{ feature.description }}</p>
+				
+						<div class="armenu-social">
+						<a href="https://www.facebook.com/sharer/sharer.php?u={{ feature.link | url_escape }}" target="_blank"><img src="/images/facebooksmall.png" /></a><a href="http://twitter.com/intent/tweet?source=webclient&text={{ feature.description }}+{{ feature.link | url_escape }}&via=creativecommons" target="_blank"><img src="/images/twittersmall.png" /></a></p>
+						</div>
+
+				</div>
+		</div>
+		{% endif %}
+	{% endfor %}
+	
+</div>
+<div style="clear: both; "></div>
+
+
+
+<p style="text-align: center;"><a href="https://creativecommons.org/"><img src="/images/cclogo-white-300.png" width="300" height="71" alt="Creative Commons" /></a></p>
+
+<div style="display: inline-block; height: 50px; "></div>
+<a href="#"><div class="uparrow"></div></a>
+<div style="display: inline-block; height: 50px; "></div>
+<div id="license" class="ar-licensebox">
+
+<p style="text-align: center">
+<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="//i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />Except where otherwise noted, <em><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">The future is open</span></em> by <a href="https://creativecommons.org/"><span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">Creative Commons</span></a> is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</p>
+
+<p>Image credits</p>
+<ul>
+	{% include ar-navbarcredits.html %}
+
+	{% for feature in site.data.features %}
+		{% if feature.owner == page.order %}
+			{% if feature.image-license %}
+				<li><a href="{{ feature.image-url }}">{{ feature.image-title }}</a>
+				/
+				{{ feature.image-author }}
+				/
+				{% if feature.image-license == 'CC0' %}
+					<a href="//creativecommons.org/publicdomain/zero/1.0/">CC0</a>
+				{% else %}				
+					<a href="http://creativecommons.org/licenses/{{ feature.image-license | remove:'CC ' | replace:' ','/' | downcase}}">{{ feature.image-license }}</a>
+				{% endif %}
+				{% if feature.image-note %}
+					({{ feature.image-note }})
+				{% endif %}
+				</li>
+			{% endif %}
+		{% endif %}
+	{% endfor %}
+	
+	{% if page.order == 9 %}
+		{% include ar-navbarcredits-finance.html %}
+	{% endif %}
+	
+</ul>
+
+<p>The banner illustrations were created by <a href="http://www.lukesurl.com/">Luke Surl</a>. To the extent possible under the law, Luke has waived all copyright and related or neighboring rights under the <a href="http://creativecommons.org/publicdomain/zero/1.0/">CC0 Public Domain Dedication</a>.</p>
+<p>The &#8220;The future is open&#8221; logo is set in <a href="//creativecommons.org/about/downloads">Akzidenz Grotesk Bold</a>. This website is set in <a href="http://www.google.com/fonts/specimen/Roboto+Slab">Roboto Slab</a>.</p>
+<p><a href="https://github.com/creativecommons/team-open/">GitHub repository</a> / <a href="https://layervault.com/creative-commons/annual-report-2014">LayerVault project</a></p>
+
+</div>
+
+	{% if page.title == 'Home' %}
+		{% assign footerposition = "static" %}
+	{% else %}
+		{% assign footerposition = "fixed" %}
+	{% endif %}
+
+{% capture tweet %}http://twitter.com/intent/tweet?source=webclient&amp;text={{ page.blurb | | replace:' ','%20' }}+teamopen.cc{{ page.url }}&via=creativecommons{% endcapture %}
+
+{% capture facebook %}https://www.facebook.com/sharer/sharer.php?u=http://teamopen.cc/{{page.url}}{% endcapture %}
+
+{% capture donate %}https://donate.creativecommons.org/?utm_campaign=thefuture&amp;utm_source={{ page.title | remove: ' ' | downcase }}&amp;utm_medium=web{% endcapture %}
+
+{% include footer.html position=footerposition bgcolora=page.bgcolora tweet=tweet facebook=facebook donate=donate %}
+
+</div>
+</body>
+</html>

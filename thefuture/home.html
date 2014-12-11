@@ -1,0 +1,60 @@
+---
+layout: annualreport
+ar-banner-bg: /images/ar-copyrightreform.jpg
+bgcolora: "#5C8091"
+bgcolorb: "#7ABBE2"
+title: Home
+permalink: /thefuture/
+published: true
+tc-image: /images/ar-tc-1.png
+tc-blurb: Creative Commons isn&#8217;t just about licenses. It&#8217;s about changing how the internet works.
+blurb: Creative Commons isn't just about licenses. It's about changing how the internet works.
+fbog-image: /images/ar-fbog-1.png
+fbog-blurb: Creative Commons isn&#8217;t just about licenses. It&#8217;s about changing how the internet works.
+socialbox-static: true
+---
+
+	{% assign numberofpages = 10 %}
+
+	{% for i in (1..10) %}
+		{% for page in site.pages %}
+			{% if page.layout == 'annualreport' %} 
+				{% if page.order == {{i}} %}
+					<a href="{{ page.permalink }}">
+					<div class="arbanner" style="background: url('{{page:ar-banner-bg}}'); ">
+					<h2>{{ page.title }}</h2>
+					</div>
+					</a>
+				{% endif %}
+			{% endif %}
+		{% endfor %}
+	{% endfor %}
+
+		<div class="spacer"></div>
+
+<div style="width: 500px; margin-left: auto; margin-right: auto; ">
+<p align="center">This report is dedicated to <a href="http://freebassel.org/">Bassel Khartabil</a>, the Syrian CC community leader who&#8217;s been imprisoned since 2012.</p>
+<p align="center"><img src="/images/bassel-face.png" width=184 height=250 /></p>
+<p align="center"><em>&#8220;<a href="http://online.wsj.com/news/articles/SB10001424127887324669104578204300433143478">Mr. Khartabil isn&#8217;t a partisan</a>, aligned with one Syrian faction against another. He represents a future, aligned against a totalitarian past.&#8221; &#8211;Lawrence Lessig</em></p>
+</div>
+
+<!--
+	{% for i in (1..10) %}
+		{% for page in site.pages %}
+			{% if page.layout == 'annualreport' %} 
+				{% if page.order == {{i}} %}
+					<a href="{{ page.permalink }}">
+					<div class="armenu">
+					<div class="armenu-photo" style="background-image: url({{ page.menu-image }})"></div>
+					<div class="armenu-textbox"><h3>{{ page.title }}</h3></div>
+					<div class="armenu-sharebox">
+					<img src="/images/facebooksmall.png" />
+					<img src="/images/twittersmall.png" />
+					</div>
+					</div>
+					</a>
+				{% endif %}
+			{% endif %}
+		{% endfor %}
+	{% endfor %}
+-->
