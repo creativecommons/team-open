@@ -1,8 +1,6 @@
-# team-open
+# Overview 
 
-Collection of stories documenting the power of open licensing for
-[teamopen.cc](http://teamopen.cc/).
-
+This repo powers [teamopen.cc](http://teamopen.cc/), a collection of stories documenting the power of open licensing.
 
 ## GitHub Pages
 
